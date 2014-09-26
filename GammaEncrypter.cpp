@@ -1,5 +1,3 @@
-#include <vector>
-
 using namespace std;
 #include "stuff.hpp"
 #include "GammaEncrypter.hpp"

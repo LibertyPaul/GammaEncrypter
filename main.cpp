@@ -11,7 +11,7 @@ using namespace std;
 
 void man(const string &progName){
 	cout << "Usage: " << endl;
-	cout << progName << " srcFileName dstFileName encrypt|decrypt key" << endl;
+	cout << progName << " srcFileName dstFileName encrypt|decrypt <text key>|-d <decimal key>" << endl;
 }
 
 int main(int argc, char **argv){

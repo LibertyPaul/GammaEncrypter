@@ -1,4 +1,3 @@
-#include <vector>
 #include <string>
 #include <random>
 
@@ -7,12 +6,12 @@ using namespace std;
 #include "KeyHolder.hpp"
 
 KeyHolder::KeyHolder(){}
-
 KeyHolder::KeyHolder(const vector<wchar_t> &key): key(key){}
+KeyHolder::KeyHolder(vector<wchar_t> &&key): key(key){}
 
 KeyHolder::KeyHolder(const string &key){
 	vector<char> mbKey;
-	for(auto ch : key)
+	for(const auto ch : key)
 		mbKey.push_back(ch);
 
 	this->key = mbVtowcV(mbKey);
@@ -25,7 +24,7 @@ void KeyHolder::generate(size_t length){
 		key.push_back(rd());
 }
 
-
-vector<wchar_t> KeyHolder::get() const{
+const vector<wchar_t> &KeyHolder::get() const{
 	return key;
 }
+
